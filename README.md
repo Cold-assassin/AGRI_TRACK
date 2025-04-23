@@ -29,7 +29,7 @@ No more middlemen. No more confusion. Just the truth, straight to the farmer.
 ### Team Name:  
 `OneCode`
 
-### Team Member:  
+### Team Member:  (SOLO PARTICIPANT)
 - Prakhar Kumar (https://github.com/Cold-assassin)
 
 ### Your Approach: 
@@ -38,12 +38,16 @@ Having spent my childhood in the Northeast, I witnessed the disconnect between t
 
 -Key Challenges I Addressed
 1.Lack of Awareness: Farmers often don't know about available subsidies or how to access them. This lack of awareness is compounded by complicated government language and processes.
+
 2.Corruption and Exploitation: Even when farmers are aware of subsidies, they are often misled or denied access by officials who exploit their ignorance.
+
 3.Technological Barriers: Farmers in rural areas may have limited access to technology or struggle with digital literacy, making it difficult to utilize online resources.
 
 -Breakthroughs & Pivots During the Hackathon
 1.Multi-Language Support: I realized that to truly serve farmers, the solution needed to break language barriers. Integrating Groq AI’s ability to respond in both English and Hinglish was a game-changer, making the system more accessible to farmers from all backgrounds.
+
 2.Transparency via Blockchain: Inspired by the idea of immutable records, I decided to integrate Stellar for its blockchain-based transaction system. This ensures that all subsidy-related activities are recorded transparently, reducing the chances of manipulation or fraud.
+
 3.Real-time Updates with Fluvio: Realizing that farmers need to stay updated on changes in subsidy schemes, I integrated Fluvio’s real-time streaming capabilities to keep both farmers and government agencies informed — ensuring a seamless exchange of information.
 
 These breakthroughs weren’t just technical solutions but also crucial steps towards building trust and enabling transparency in a space that is rife with corruption.
@@ -102,47 +106,65 @@ These breakthroughs weren’t just technical solutions but also crucial steps to
 ## 🧪 How to Run the Project
 
 ### Requirements:
-- Node.js / Python / Docker / etc.
-- API Keys (if any)
-- .env file setup (if needed)
+- Node.js installed
+
+- API Key for Groq
+
+- Internet connection for API and hosting services
+
+- Stellar wallet setup for advanced features
+
+
 
 ### Local Setup:
 ```bash
-# Clone the repo
-git clone https://github.com/your-team/project-name
+# 1. Clone the repo
+git clone https://github.com/Cold-assassin/AGRI_TRACK.git
 
-# Install dependencies
-cd project-name
+# 2. Navigate to project folder
+cd project-AgriTrack
+
+# 3. Install backend dependencies
 npm install
 
-# Start development server
-npm run dev
+# 4. Create a `.env` file and add your Groq API key
+echo "GROQ_API_KEY=your_api_key_here" > .env
+
+# 5. Start the backend server
+node index.js
+
 ```
 
-Provide any backend/frontend split or environment setup notes here.
+- Backend: /groq endpoint listens for prompts and returns responses.
+
+- Frontend: Simple HTML/JS/CSS, fetches from the above endpoint.
+
+- Make sure CORS is enabled on backend (already handled in code).
+
+
 
 ---
 
 ## 🧬 Future Scope
 
-List improvements, extensions, or follow-up features:
+- Offline-First AI Assistant via Feature Phones-->
+Use USSD or voice bots in regional languages to serve farmers without smartphones or internet — AI that works even in zero-connectivity rural zones.
 
-- 📈 More integrations  
-- 🛡️ Security enhancements  
-- 🌐 Localization / broader accessibility  
+-  Blockchain-Powered Agri-Marketplace-->
+Launch a platform where verified farmers can sell produce directly, see fair market rates, track transactions, and get blockchain-backed proof of sale — cutting out exploitative middlemen.
 
----
+- Subsidy-as-a-Service (SaaS) for NGOs & Startups-->
+Offer APIs and tools for third parties to build solutions on top of your platform, expanding reach and creating an agri-tech ecosystem.
 
-## 📎 Resources / Credits
-
-- APIs or datasets used  
-- Open source libraries or tools referenced  
-- Acknowledgements  
-
+This isn’t just future scope — it’s a vision.
 ---
 
 ## 🏁 Final Words
 
-Share your hackathon journey — challenges, learnings, fun moments, or shout-outs!
+This wasn’t just another hackathon project for me — it was deeply personal. Having grown up across the North East and later in Meerut, I saw two very different sides of India. One thing that stuck with me was how disconnected our farmers are from the very subsidies and schemes designed to help them. Sometimes it’s because of language barriers, other times it’s middlemen or officials making things harder than they need to be.
+
+This project was my way of bridging that gap — by using AI to explain things simply, blockchain (Stellar) to keep records transparent and unchangeable, and real-time updates via Fluvio. Even if one farmer gets clarity or financial help because of this, I’ll feel like I’m on the right path.
+
+If selected for the next phase, I’m excited about the opportunity to build on this foundation, refine the solution further, and bring it closer to real-world impact.
 
 ---
