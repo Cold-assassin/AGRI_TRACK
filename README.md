@@ -2,7 +2,7 @@
 
 # 🚀 AgriTrack
 
-> A Way To Make The Farmers Grow And Let Them 
+> A Way To Make The Farmers Grow And Let Them Grow
 
 ---
 
