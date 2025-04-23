@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgriSubsidy Advisor</title>
+  <link rel="stylesheet" href="farmer_portal.css">
+</head>
+<body>
+  <h1>🌾 AgriTrack</h1>
+  <!-- 🔗 Add this inside your <body> just below <h1> -->
+  <div style="position: absolute; top: 20px; right: 30px;">
+    <a href="farmer1.html" class="btn btn-secondary" style="padding: 0.6rem 1rem; text-decoration: none;">💼 Wallet</a>
+  </div>
+  <div class="container">
+    <div class="input-group">
+      <input id="userInput" type="text" placeholder="Type or speak e.g., 'I'm cultivating 3 acres of rice'">
+    </div>
+    <div class="button-group">
+      <button class="btn btn-primary" onclick="processInput()">Calculate Subsidy</button>
+      <button class="btn btn-secondary voice-btn" onclick="startListening()">
+        <span class="mic-icon">🎤</span> Speak
+      </button>
+    </div>
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
+      <div>Analysing with AI...</div>
+    </div>
+    <div class="result-box" id="resultBox">
+      <div class="result-item">
+        <span>Crop Type</span>
+        <span id="cropType">-</span>
+      </div>
+      <div class="result-item">
+        <span>Total Acres</span>
+        <span id="totalAcres">-</span>
+      </div>
+      <div class="result-item">
+        <span>Subsidy Rate</span>
+        <span id="subsidyRate">-</span>
+      </div>
+      <div class="result-item">
+        <span>Total Amount</span>
+        <span id="totalSubsidy" class="highlight">-</span>
+      </div>
+      <button class="btn btn-success" onclick="startApplication()">Apply Now</button>
+    </div>
+  </div>
+  <!-- Chatbot Toggle Button -->
+  <button id="chatToggleBtn" onclick="toggleChat()">💬</button>
+  <!-- Chatbot UI -->
+  <div id="chatBox">
+    <header>Groq Assistant</header>
+    <div id="chatLog"></div>
+    <div id="chatInputArea">
+      <input type="text" id="chatInput" placeholder="Ask about farming...">
+      <button id="chatSend" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+  <!-- Application Status Section -->
+  <div class="application-status" id="applicationStatus" style="display: none;">
+    <div class="pulse-ring"></div>
+    <div class="status-header">
+      <h3>Application Progress</h3>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="progress-text" id="progressText">Initializing...</div>
+    </div>
+    <div class="status-details" id="statusDetails">
+      <div class="status-item">
+        <span class="icon">🛰️</span>
+        <span class="text">Connecting to Gov Network</span>
+      </div>
+      <div class="status-item">
+        <span class="icon">🔐</span>
+        <span class="text">Encrypting Data</span>
+      </div>
+      <div class="status-item">
+        <span class="icon">📡</span>
+        <span class="text">Streaming via Fluvio</span>
+      </div>
+      <div class="status-item">
+        <span class="icon">🕵️‍♂️</span>
+        <span class="text">Verifying Records</span>
+      </div>
+      <div class="status-item">
+        <span class="icon">✅</span>
+        <span class="text">Finalizing Application</span>
+      </div>
+    </div>
+    <div class="completion-message" id="completionMessage" style="display: none;"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="farmer_portal.js"></script>
+</body>
+</html>

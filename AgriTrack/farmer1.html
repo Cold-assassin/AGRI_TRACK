@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌾 Farmer Wallet Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/stellar-sdk@10.4.0/dist/stellar-sdk.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f6f5;
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 { color: #007f5f; }
+    .card {
+      background: #fff;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+    .balance {
+      font-size: 2rem;
+      margin: 1rem 0;
+      color: #28a745;
+    }
+    .loading {
+      font-size: 1.2rem;
+      color: #999;
+    }
+    .tx-list {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .tx {
+      padding: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+    .gov-highlight {
+      color: #007f5f;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>👨‍🌾 Farmer Wallet Dashboard</h1>
+  <div class="card">
+    <p id="status" class="loading">Loading wallet info...</p>
+    <div id="walletInfo" style="display:none;">
+      <p><strong>Current XLM Balance:</strong></p>
+      <p class="balance" id="xlmBalance">--</p>
+      <p><strong>Estimated Subsidy in ₹:</strong></p>
+      <p class="balance" id="inrValue">--</p>
+
+      <div class="tx-list">
+        <h3>📜 Last 5 Transactions from Gov:</h3>
+        <div id="txs"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const farmerPublicKey = "GCBFFTBLC4NA4EJDOQAKF73GJYCPXVEDFMVE35OI3AERHJVY2XFDMNYO";
+    const govPublicKey = "GCFQJH63UXELVKSB6VZQKHQO6KBBIYAM5WZ2UDX44EYGSXJYVRD6XPKL"; // Replace with your real one
+
+    const server = new StellarSdk.Server("https://horizon-testnet.stellar.org");
+
+    async function loadWalletInfo() {
+      try {
+        document.getElementById("status").textContent = "⏳ Fetching wallet info...";
+        const account = await server.loadAccount(farmerPublicKey);
+        const balanceObj = account.balances.find(b => b.asset_type === "native");
+        const balance = parseFloat(balanceObj.balance).toFixed(2);
+        document.getElementById("xlmBalance").textContent = balance + " XLM";
+
+        // ₹ conversion (approx ₹10 per XLM)
+        const inrValue = (balance * 21).toFixed(0);
+        document.getElementById("inrValue").textContent = "₹" + inrValue;
+
+        document.getElementById("walletInfo").style.display = "block";
+        document.getElementById("status").style.display = "none";
+
+        // Load transactions
+        const txResult = await server.transactions()
+          .forAccount(farmerPublicKey)
+          .order('desc')
+          .limit(10)
+          .call();
+
+        const txDiv = document.getElementById("txs");
+        txDiv.innerHTML = "";
+
+        let count = 0;
+
+        for (const tx of txResult.records) {
+          if (count >= 5) break;
+
+          const op = await tx.operations();
+          for (const o of op.records) {
+            if (o.type === "payment" && o.from === govPublicKey && o.to === farmerPublicKey) {
+              const item = document.createElement("div");
+              item.className = "tx";
+              item.innerHTML = `💸 Received <strong>${o.amount} XLM</strong> from <span class="gov-highlight">Gov</span> on ${new Date(tx.created_at).toLocaleString()}`;
+              txDiv.appendChild(item);
+              count++;
+            }
+          }
+        }
+
+        if (count === 0) {
+          txDiv.innerHTML = "<p>No recent transactions from Gov.</p>";
+        }
+
+      } catch (err) {
+        document.getElementById("status").textContent = "❌ Error loading wallet: " + err.message;
+        console.error(err);
+      }
+    }
+
+    loadWalletInfo();
+    setInterval(loadWalletInfo, 10000); // Live refresh every 10 sec
+  </script>
+
+</body>
+</html>

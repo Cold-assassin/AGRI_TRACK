@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Dashboard</title>
+  <link rel="stylesheet" href="farmer.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Farmer Subsidy Dashboard</h1>
+
+    <div class="section">
+      <h2>Claim Subsidy</h2>
+      <input type="number" id="claimAmount" placeholder="Enter amount to claim (XLM)" />
+      <button onclick="claimSubsidy()">Claim</button>
+    </div>
+
+    <div class="section">
+      <h2>Latest Subsidy Credit</h2>
+      <p><strong>Transaction ID:</strong> <span id="txnId">-</span></p>
+      <p><strong>Amount Received:</strong> <span id="amountReceived">-</span> XLM</p>
+      <p><strong>Credited At:</strong> <span id="timestamp">-</span></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/stellar-sdk/lib/stellar-sdk.min.js"></script>
+  <script src="farmer.js"></script>
+</body>
+</html>
