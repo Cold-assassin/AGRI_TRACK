@@ -1,74 +1,84 @@
 ![github-submission-banner](https://github.com/user-attachments/assets/a1493b84-e4e2-456e-a791-ce35ee2bcf2f)
 
-# 🚀 Project Title
+# 🚀 AgriTrack
 
-> A one-line tagline or mission statement for your project.
+> A Way To Make The Farmers Grow And Let Them 
 
 ---
 
 ## 📌 Problem Statement
 
-Select the problem statement number and title from the official list given in Participant Manual.
+**Problem Statement 6 – Bridging The Gap Between Farmers And Their Rightful Subsidies**
 
-**Example:**  
-**Problem Statement 7 – Transform the Future of Rural Commerce**
+Many rural farmers remain unaware of government subsidies due to complex paperwork, language barriers, digital illiteracy, and exploitation by middlemen and officials.
 
 ---
 
 ## 🎯 Objective
 
-What problem does your project solve, and who does it serve?  
-Briefly describe the real-world use case and the value it provides.
+Millions of farmers miss out on vital government subsidies due to complex paperwork, language gaps, low digital literacy, and exploitation by middlemen. This project cuts through the noise.
+
+We built an AI-powered assistant that speaks in simple English or Hinglish supports 17+ language, helps farmers understand and access the schemes they deserve, and protects them from misinformation and fraud—making support truly accessible, understandable, and actionable.
+
+No more middlemen. No more confusion. Just the truth, straight to the farmer.
 
 ---
 
 ## 🧠 Team & Approach
 
 ### Team Name:  
-`Your team name here`
+`OneCode`
 
-### Team Members:  
-- Name 1 (GitHub / LinkedIn / Role)  
-- Name 2  
-- Name 3  
-*(Add links if you want)*
+### Team Member:  
+- Prakhar Kumar (https://github.com/Cold-assassin)
 
-### Your Approach:  
-- Why you chose this problem  
-- Key challenges you addressed  
-- Any pivots, brainstorms, or breakthroughs during hacking  
+### Your Approach: 
+-Why I Chose This Problem
+Having spent my childhood in the Northeast, I witnessed the disconnect between the government and the farming community — especially regarding subsidies. When I moved to Meerut, where agriculture is a lifeline, I saw firsthand how farmers struggle with both ignorance about subsidies and exploitation by corrupt officials. It became clear to me that there was a pressing need for a solution that could bridge this gap and empower farmers with the knowledge they deserve.
+
+-Key Challenges I Addressed
+1.Lack of Awareness: Farmers often don't know about available subsidies or how to access them. This lack of awareness is compounded by complicated government language and processes.
+2.Corruption and Exploitation: Even when farmers are aware of subsidies, they are often misled or denied access by officials who exploit their ignorance.
+3.Technological Barriers: Farmers in rural areas may have limited access to technology or struggle with digital literacy, making it difficult to utilize online resources.
+
+-Breakthroughs & Pivots During the Hackathon
+1.Multi-Language Support: I realized that to truly serve farmers, the solution needed to break language barriers. Integrating Groq AI’s ability to respond in both English and Hinglish was a game-changer, making the system more accessible to farmers from all backgrounds.
+2.Transparency via Blockchain: Inspired by the idea of immutable records, I decided to integrate Stellar for its blockchain-based transaction system. This ensures that all subsidy-related activities are recorded transparently, reducing the chances of manipulation or fraud.
+3.Real-time Updates with Fluvio: Realizing that farmers need to stay updated on changes in subsidy schemes, I integrated Fluvio’s real-time streaming capabilities to keep both farmers and government agencies informed — ensuring a seamless exchange of information.
+
+These breakthroughs weren’t just technical solutions but also crucial steps towards building trust and enabling transparency in a space that is rife with corruption.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Core Technologies Used:
-- Frontend:
-- Backend:
-- Database:
-- APIs:
-- Hosting:
+- Frontend:html css js
+- Backend: Node
+- Database:Steller sdk (for Immutable Storage)
+- APIs:Groq 
+- Hosting:netlify Render
 
 ### Sponsor Technologies Used (if any):
-- [ ] **Groq:** _How you used Groq_  
+- [✅] **Groq:** Powered the AI assistant to help farmers understand subsidy schemes in a simple language and determine eligibility and interact in thier comfort lanaguge.
 - [ ] **Monad:** _Your blockchain implementation_  
-- [ ] **Fluvio:** _Real-time data handling_  
+- [✅] **Fluvio:** Managed real-time data streaming and updates between the farmer and government, ensuring seamless communication.  
 - [ ] **Base:** _AgentKit / OnchainKit / Smart Wallet usage_  
 - [ ] **Screenpipe:** _Screen-based analytics or workflows_  
-- [ ] **Stellar:** _Payments, identity, or token usage_
+- [✅] **Stellar:** Used as a blockchain-based ledger to securely record subsidy transactions, ensuring transparency and preventing fraud.
 *(Mark with ✅ if completed)*
 ---
 
 ## ✨ Key Features
 
-Highlight the most important features of your project:
+✅ AI Assistant (Groq) – Understands farmer queries in English or Hinglish and explains subsidy schemes clearly.
 
-- ✅ Feature 1  
-- ✅ Feature 2  
-- ✅ Feature 3  
-- ✅ Feature 4  
+✅ Fraud Prevention (Stellar) – Uses blockchain to record subsidy data, ensuring full transparency and trust.
 
-Add images, GIFs, or screenshots if helpful!
+✅ Real-Time Sync (Fluvio) – Keeps both farmers and officials updated with instant changes and submissions.
+
+✅ Multi-Language Support – Bridges language barriers so farmers from any region can access information easily.
+
 
 ---
 
@@ -81,11 +91,11 @@ Add images, GIFs, or screenshots if helpful!
 
 ## ✅ Tasks & Bonus Checklist
 
-- [ ] **All members of the team completed the mandatory task - Followed at least 2 of our social channels and filled the form** (Details in Participant Manual)  
-- [ ] **All members of the team completed Bonus Task 1 - Sharing of Badges and filled the form (2 points)**  (Details in Participant Manual)
-- [ ] **All members of the team completed Bonus Task 2 - Signing up for Sprint.dev and filled the form (3 points)**  (Details in Participant Manual)
+- [✅] **All members of the team completed the mandatory task - Followed at least 2 of our social channels and filled the form** (Details in Participant Manual)  
+- [✅] **All members of the team completed Bonus Task 1 - Sharing of Badges and filled the form (2 points)**  (Details in Participant Manual)
+- [✅] **All members of the team completed Bonus Task 2 - Signing up for Sprint.dev and filled the form (3 points)**  (Details in Participant Manual)
 
-*(Mark with ✅ if completed)*
+
 
 ---
 
