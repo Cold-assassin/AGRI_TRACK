@@ -27,7 +27,7 @@ No more middlemen. No more confusion. Just the truth, straight to the farmer.
 ## 🧠 Team & Approach
 
 ### Team Name:  
-`OneCode`
+``
 
 ### Team Member:  (SOLO PARTICIPANT)
 - Prakhar Kumar (https://github.com/Cold-assassin)
