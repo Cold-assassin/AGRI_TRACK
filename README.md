@@ -88,8 +88,8 @@ These breakthroughs weren’t just technical solutions but also crucial steps to
 
 ## 📽️ Demo & Deliverables
 
-- **Demo Video Link:** [Paste YouTube or Loom link here]  
-- **Pitch Deck / PPT Link:** [Paste Google Slides / PDF link here]  
+- **Demo Video Link:** https://youtu.be/tZF6FOaqEcQ?si=FMXAHxG0HvGLnBNp
+- **Pitch Deck / PPT Link:** https://drive.google.com/file/d/1Vuk_BtYRgAj1vYm9yr2oSjG3rxH5NCdi/view?usp=sharing
 
 ---
 
